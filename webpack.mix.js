@@ -29,25 +29,26 @@ const mix = require('laravel-mix');
  *
  */
 
-mix.styles([ // css plano
-    'resources/utils/css/all.min.css',
-    'resources/utils/css/adminlte.min.css',
-], 'public/css/template.css')
+mix
+// .styles([ // css plano
+//     'resources/utils/css/all.min.css',
+//     'resources/utils/css/adminlte.min.css',
+// ], 'public/css/template.css')
 
-.scripts([ // vanilla js
-    'resources/utils/js/jquery.min.js',
-    'resources/utils/js/bootstrap.bundle.min.js',
-    'resources/utils/js/adminlte.min.js'
-], 'public/js/template.js')
+// .scripts([ // vanilla js
+//     'resources/utils/js/jquery.min.js',
+//     'resources/utils/js/bootstrap.bundle.min.js',
+//     'resources/utils/js/adminlte.min.js'
+// ], 'public/js/template.js')
 
-.copy( // copiamos el folder webfonts 
-    'resources/utils/webfonts',
-    'public/webfonts'
-)
-.copy( // copiamos el folder de las imagenes 
-    'resources/utils/img',
-    'public/img'
-)
+// .copy( // copiamos el folder webfonts 
+//     'resources/utils/webfonts',
+//     'public/webfonts'
+// )
+// .copy( // copiamos el folder de las imagenes 
+//     'resources/utils/img',
+//     'public/img'
+// )
   
 .js( // app.js
     'resources/js/app.js',
