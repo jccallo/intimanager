@@ -15,27 +15,28 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('name')->nullable();
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
+            $table->string('password')->nullable();
             $table->rememberToken();
             $table->timestamps();
 
-            $table->string('dni');
-            $table->date('fecha_nacimiento');
-            $table->string('talla_overol');
-            $table->integer('talla_zapato');
-            $table->decimal('talla', 3, 2);
-            $table->decimal('peso', 5, 2);
-            $table->string('direccion');
-            $table->string('observacion');
-            $table->decimal('sueldo_dia', 10, 2);
-            $table->decimal('sueldo_mes', 10, 2);
-            $table->string('foto_firma');
-            $table->string('foto_perfil');
-            $table->string('foto_huella');
-            $table->enum('tipo_trabajador', ['externo', 'permanente']);
+            $table->string('dni')->nullable();
+            $table->date('fecha_nacimiento')->nullable();
+            $table->string('talla_overol')->nullable();
+            $table->integer('talla_zapato')->nullable();
+            $table->decimal('talla', 3, 2)->nullable();
+            $table->decimal('peso', 5, 2)->nullable();
+            $table->string('direccion')->nullable();
+            $table->string('observacion')->nullable();
+            $table->decimal('sueldo_dia', 10, 2)->nullable();
+            $table->decimal('sueldo_mes', 10, 2)->nullable();
+            $table->string('foto_firma')->nullable();
+            $table->string('foto_perfil')->nullable();
+            $table->string('foto_huella')->nullable();
+            $table->integer('tipo_trabajador')->default(0); // 0: ni definido
+            $table->boolean('status')->default(1); // 0: inactivo 1: activo
             
             $table->unsignedBigInteger('place_id')->nullable();
             $table->foreign('place_id')->references('id')->on('places')->onDelete('cascade');

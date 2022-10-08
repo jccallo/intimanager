@@ -38,6 +38,7 @@ class User extends Authenticatable
         'foto_perfil',
         'foto_huella',
         'tipo_trabajador',
+        'status',
         'place_id',
     ];
 
@@ -49,6 +50,10 @@ class User extends Authenticatable
     protected $hidden = [
         'password',
         'remember_token',
+
+        'email_verified_at',
+        'created_at',
+        'updated_at',
     ];
 
     /**
