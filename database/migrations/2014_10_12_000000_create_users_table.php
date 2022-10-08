@@ -21,6 +21,25 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
+
+            $table->string('dni');
+            $table->date('fecha_nacimiento');
+            $table->string('talla_overol');
+            $table->integer('talla_zapato');
+            $table->decimal('talla', 3, 2);
+            $table->decimal('peso', 5, 2);
+            $table->string('direccion');
+            $table->string('observacion');
+            $table->decimal('sueldo_dia', 10, 2);
+            $table->decimal('sueldo_mes', 10, 2);
+            $table->string('foto_firma');
+            $table->string('foto_perfil');
+            $table->string('foto_huella');
+            $table->enum('tipo_trabajador', ['externo', 'permanente']);
+            
+            $table->unsignedBigInteger('place_id')->nullable();
+            $table->foreign('place_id')->references('id')->on('places')->onDelete('cascade');
+
         });
     }
 

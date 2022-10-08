@@ -21,6 +21,24 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+
+        'nombre',
+        'apellido',
+        'dni',
+        'fecha_nacimiento',
+        'talla',
+        'talla_zapato',
+        'talla_overol',
+        'peso',
+        'direccion',
+        'observacion',
+        'sueldo_dia',
+        'sueldo_mes',
+        'foto_firma',
+        'foto_perfil',
+        'foto_huella',
+        'tipo_trabajador',
+        'place_id',
     ];
 
     /**
