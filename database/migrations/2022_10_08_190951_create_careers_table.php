@@ -17,7 +17,7 @@ class CreateCareersTable extends Migration
             $table->id();
             $table->timestamps();
 
-            $table->string('descripcion')->unique();
+            $table->string('nombre')->unique();
             $table->integer('tipo_carrera')->default(0); // 0: ni definido
             $table->boolean('status')->default(1); // 0: inactivo 1: activo
         });

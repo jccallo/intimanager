@@ -5,6 +5,13 @@
 		<!-- Site wrapper -->
 		<div class="wrapper">
 
+            <!-- Preloader -->
+            <div class="preloader flex-column justify-content-center align-items-center">
+                <div class="spinner-border text-dark" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+            </div>
+
 			<!-- Navbar -->
 			<Navbar></Navbar>
 			<!-- /.navbar -->
@@ -14,9 +21,7 @@
 			<!-- /.Main Sidebar Container -->
 
 			<!-- Content Wrapper. Contains page content -->
-			<div class="content-wrapper">
-				<router-view></router-view>
-			</div>
+			<router-view></router-view>
 			<!-- /.content-wrapper -->
 
 			<!-- Footer -->
@@ -41,7 +46,7 @@ import Navbar from "../shared/Navbar.vue";
 import Footer from "../shared/Footer.vue";
 import Sidebar from "../shared/Sidebar.vue";
 // import Content from "./shared/Content.vue";
-    
+
 export default {
 	components: {
 		Navbar,

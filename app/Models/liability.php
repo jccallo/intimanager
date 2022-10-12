@@ -10,7 +10,7 @@ class liability extends Model
     use HasFactory;
 
     protected $fillable = [
-        'descripcion',
+        'nombre',
         'status',
     ];
 

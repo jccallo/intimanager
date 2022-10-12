@@ -14,7 +14,7 @@ class CareerFactory extends Factory
     public function definition()
     {
         return [
-            'descripcion' => $this->faker->sentence(),
+            'nombre' => $this->faker->unique()->word(),
             'tipo_carrera' => $this->faker->randomElement([0, 1, 2]),
             'status' => $this->faker->randomElement([1, 0]),
         ];

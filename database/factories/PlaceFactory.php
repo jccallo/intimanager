@@ -14,7 +14,7 @@ class PlaceFactory extends Factory
     public function definition()
     {
         return [
-            'descripcion' => $this->faker->city(),
+            'nombre' => $this->faker->unique()->city(),
             'status' => $this->faker->randomElement([1, 0]),
         ];
     }

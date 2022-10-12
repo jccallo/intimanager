@@ -15,29 +15,30 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->nullable();
-            $table->string('email')->unique();
+            $table->string('name');
+            $table->string('email')->unique()->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password')->nullable();
             $table->rememberToken();
             $table->timestamps();
 
-            $table->string('dni')->nullable();
+            $table->string('dni')->unique()->nullable();
+            $table->string('telefono')->unique()->nullable();
             $table->date('fecha_nacimiento')->nullable();
             $table->string('talla_overol')->nullable();
             $table->integer('talla_zapato')->nullable();
             $table->decimal('talla', 3, 2)->nullable();
             $table->decimal('peso', 5, 2)->nullable();
             $table->string('direccion')->nullable();
-            $table->string('observacion')->nullable();
+            $table->text('observacion')->nullable();
             $table->decimal('sueldo_dia', 10, 2)->nullable();
             $table->decimal('sueldo_mes', 10, 2)->nullable();
             $table->string('foto_firma')->nullable();
             $table->string('foto_perfil')->nullable();
             $table->string('foto_huella')->nullable();
-            $table->integer('tipo_trabajador')->default(0); // 0: ni definido
+            $table->integer('tipo_trabajador')->default(0); // 0: no definido
             $table->boolean('status')->default(1); // 0: inactivo 1: activo
-            
+
             $table->unsignedBigInteger('place_id')->nullable();
             $table->foreign('place_id')->references('id')->on('places')->onDelete('cascade');
 

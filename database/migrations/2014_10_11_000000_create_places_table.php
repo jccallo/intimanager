@@ -16,8 +16,8 @@ class CreatePlacesTable extends Migration
         Schema::create('places', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            
-            $table->string('descripcion')->unique();
+
+            $table->string('nombre')->unique();
             $table->boolean('status')->default(1); // 0: inactivo 1: activo
         });
     }

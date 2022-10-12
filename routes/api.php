@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\CareerController;
-use App\Http\Controllers\Api\CustomerController;
+use App\Http\Controllers\Api\FriendController;
 use App\Http\Controllers\Api\LiabilityController;
 use App\Http\Controllers\Api\PlaceController;
 use App\Http\Controllers\Api\UserController;
@@ -24,7 +24,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::resource('places', PlaceController::class)->except(['create', 'edit']);
-Route::resource('users', UserController::class)->except(['create', 'edit']);
+Route::resource('users', UserController::class);
 Route::resource('liabilities', LiabilityController::class)->except(['create', 'edit']);
-Route::resource('customers', CustomerController::class)->except(['create', 'edit']);
+Route::resource('friends', FriendController::class)->except(['create', 'edit']);
 Route::resource('careers', CareerController::class)->except(['create', 'edit']);

@@ -14,7 +14,7 @@ class LiabilityFactory extends Factory
     public function definition()
     {
         return [
-            'descripcion' => $this->faker->unique()->word(),
+            'nombre' => $this->faker->unique()->word(),
             'status' => $this->faker->randomElement([1, 0]),
         ];
     }
