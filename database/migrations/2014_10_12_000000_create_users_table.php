@@ -15,7 +15,7 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('name'); // OBLIGATORIO
             $table->string('email')->unique()->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password')->nullable();
@@ -27,8 +27,8 @@ class CreateUsersTable extends Migration
             $table->date('fecha_nacimiento')->nullable();
             $table->string('talla_overol')->nullable();
             $table->integer('talla_zapato')->nullable();
-            $table->decimal('talla', 3, 2)->nullable();
-            $table->decimal('peso', 5, 2)->nullable();
+            $table->decimal('talla', 10, 2)->nullable(); // para evitar errores se define de manera general
+            $table->decimal('peso', 10, 2)->nullable(); // para evitar errores se define de manera general
             $table->string('direccion')->nullable();
             $table->text('observacion')->nullable();
             $table->decimal('sueldo_dia', 10, 2)->nullable();
@@ -36,11 +36,11 @@ class CreateUsersTable extends Migration
             $table->string('foto_firma')->nullable();
             $table->string('foto_perfil')->nullable();
             $table->string('foto_huella')->nullable();
-            $table->integer('tipo_trabajador')->default(0); // 0: no definido
+            $table->boolean('tipo_trabajador')->default(0); // 0: no definido
             $table->boolean('status')->default(1); // 0: inactivo 1: activo
 
             $table->unsignedBigInteger('place_id')->nullable();
-            $table->foreign('place_id')->references('id')->on('places')->onDelete('cascade');
+            $table->foreign('place_id')->references('id')->on('places')->onDelete('set null');
 
         });
     }

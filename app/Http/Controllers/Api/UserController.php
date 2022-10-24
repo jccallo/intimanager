@@ -25,7 +25,8 @@ class UserController extends ApiController
     {
         $fields = $request->all();
         $user = User::create($fields);
-        return $this->showResponse($user, 201);
+        return $user;
+        // return $this->showResponse($user, 201);
     }
 
     public function show($id)

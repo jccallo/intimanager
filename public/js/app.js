@@ -2552,7 +2552,11 @@ __webpack_require__.r(__webpack_exports__);
       }
 
       _userService__WEBPACK_IMPORTED_MODULE_0__["default"].store(user).then(function (res) {
-        if (!res.ok) console.log(res.msg); // this.$router.push({ name: "user-show", params: { id: this.user.id } });
+        if (!res.ok) console.log(res.msg);
+
+        _this2.$router.push({
+          name: "user-index"
+        });
 
         console.log('res:', res);
         _this2.loading = false;
@@ -23233,7 +23237,7 @@ var render = function () {
                             },
                           ],
                           staticClass: "form-control",
-                          attrs: { type: "text" },
+                          attrs: { type: "number" },
                           domProps: { value: _vm.user.talla_zapato },
                           on: {
                             input: function ($event) {
@@ -23267,7 +23271,7 @@ var render = function () {
                             },
                           ],
                           staticClass: "form-control",
-                          attrs: { type: "text" },
+                          attrs: { type: "number" },
                           domProps: { value: _vm.user.talla },
                           on: {
                             input: function ($event) {
@@ -23297,7 +23301,7 @@ var render = function () {
                             },
                           ],
                           staticClass: "form-control",
-                          attrs: { type: "text" },
+                          attrs: { type: "number" },
                           domProps: { value: _vm.user.peso },
                           on: {
                             input: function ($event) {
@@ -23395,7 +23399,7 @@ var render = function () {
                             },
                           ],
                           staticClass: "form-control",
-                          attrs: { type: "text" },
+                          attrs: { type: "number" },
                           domProps: { value: _vm.user.sueldo_dia },
                           on: {
                             input: function ($event) {
@@ -23429,7 +23433,7 @@ var render = function () {
                             },
                           ],
                           staticClass: "form-control",
-                          attrs: { type: "text" },
+                          attrs: { type: "number" },
                           domProps: { value: _vm.user.sueldo_mes },
                           on: {
                             input: function ($event) {

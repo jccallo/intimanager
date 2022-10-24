@@ -17,7 +17,7 @@ class CreateFriendsTable extends Migration
             $table->id();
             $table->timestamps();
 
-            $table->string('nombre');
+            $table->string('nombre'); // OBLIGATORIO
             $table->string('telefono')->unique()->nullable();
             $table->string('direccion')->nullable();
             $table->string('correo')->unique()->nullable();

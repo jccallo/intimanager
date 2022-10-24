@@ -17,7 +17,7 @@ class CreatePlacesTable extends Migration
             $table->id();
             $table->timestamps();
 
-            $table->string('nombre')->unique();
+            $table->string('nombre')->unique(); // OBLIGATORIO
             $table->boolean('status')->default(1); // 0: inactivo 1: activo
         });
     }

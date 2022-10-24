@@ -99,7 +99,7 @@
                 <label class="col-sm-2 col-form-label">Talla de Zapato</label>
                 <div class="col-sm-10">
                   <input
-                    type="text"
+                    type="number"
                     class="form-control"
                     v-model="user.talla_zapato"
                   />
@@ -110,7 +110,7 @@
                 <label class="col-sm-2 col-form-label">Talla</label>
                 <div class="col-sm-10">
                   <input
-                    type="text"
+                    type="number"
                     class="form-control"
                     v-model="user.talla"
                   />
@@ -120,7 +120,7 @@
               <div class="form-group row">
                 <label class="col-sm-2 col-form-label">Peso</label>
                 <div class="col-sm-10">
-                  <input type="text" class="form-control" v-model="user.peso" />
+                  <input type="number" class="form-control" v-model="user.peso" />
                 </div>
               </div>
               <!-- Direccion -->
@@ -150,7 +150,7 @@
                 <label class="col-sm-2 col-form-label">Sueldo Dia</label>
                 <div class="col-sm-10">
                   <input
-                    type="text"
+                    type="number"
                     class="form-control"
                     v-model="user.sueldo_dia"
                   />
@@ -161,7 +161,7 @@
                 <label class="col-sm-2 col-form-label">Sueldo Mes</label>
                 <div class="col-sm-10">
                   <input
-                    type="text"
+                    type="number"
                     class="form-control"
                     v-model="user.sueldo_mes"
                   />
@@ -270,7 +270,7 @@ export default {
       }
       userService.store(user).then((res) => {
         if (!res.ok) console.log(res.msg);
-        // this.$router.push({ name: "user-show", params: { id: this.user.id } });
+        this.$router.push({name: "user-index"});
         console.log('res:', res);
         this.loading = false;
       });
